@@ -680,9 +680,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>Golang</div>
                     <div className={styles.langToolType}>Language</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.expert}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -694,9 +691,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>C++</div>
                     <div className={styles.langToolType}>Language</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.advanced}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -708,9 +702,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>C</div>
                     <div className={styles.langToolType}>Language</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.advanced}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -722,9 +713,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>JavaScript</div>
                     <div className={styles.langToolType}>Language</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.expert}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -736,9 +724,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>TypeScript</div>
                     <div className={styles.langToolType}>Language</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.expert}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -750,9 +735,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>Rust</div>
                     <div className={styles.langToolType}>Language</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.intermediate}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -764,9 +746,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>Swift</div>
                     <div className={styles.langToolType}>Language</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.intermediate}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -778,9 +757,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>Python</div>
                     <div className={styles.langToolType}>Language</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.advanced}`}
-                    ></div>
                   </div>
                 </div>
 
@@ -796,9 +772,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>Gin</div>
                     <div className={styles.langToolType}>Framework</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.expert}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -810,9 +783,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>Fiber</div>
                     <div className={styles.langToolType}>Framework</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.advanced}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -824,9 +794,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>Next.js</div>
                     <div className={styles.langToolType}>Framework</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.expert}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -838,9 +805,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>Nest.js</div>
                     <div className={styles.langToolType}>Framework</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.advanced}`}
-                    ></div>
                   </div>
                   <div className={styles.langToolCard}>
                     <Image
@@ -852,9 +816,6 @@ export default function Home() {
                     />
                     <div className={styles.langToolName}>Express.js</div>
                     <div className={styles.langToolType}>Framework</div>
-                    <div
-                      className={`${styles.langToolLevel} ${styles.expert}`}
-                    ></div>
                   </div>
                 </div>
 

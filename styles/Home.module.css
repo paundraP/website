@@ -1036,19 +1036,6 @@ a.secondary {
   width: var(--level);
 }
 
-.langToolLevel.expert {
-  --level: 100%;
-}
-.langToolLevel.advanced {
-  --level: 80%;
-}
-.langToolLevel.intermediate {
-  --level: 60%;
-}
-.langToolLevel.beginner {
-  --level: 40%;
-}
-
 .sectionTitle {
   font-family: "MS Sans Serif", sans-serif;
   font-size: 16px;
