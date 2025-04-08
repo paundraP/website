@@ -247,8 +247,8 @@ export default function Home() {
                       for new challenges to expand my knowledge.
                     </p>
                     <p className={styles.aboutMeParagraph}>
-                      When I&apos;m not coding, you can find me X. I believe in
-                      continuous learning and staying updated with the latest
+                      When I&apos;m not coding, you can find me on X. I believe
+                      in continuous learning and staying updated with the latest
                       technologies in the ever-evolving tech landscape.
                     </p>
                   </div>
