@@ -98,6 +98,9 @@ export default function Home() {
           <a href="https://instagram.com/paundra.pujo" target="_blank">
             Instagram
           </a>
+          <a href="https://github.com/paundrap" target="_blank">
+            Github
+          </a>
         </div>
       </nav>
 
@@ -210,8 +213,46 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.modalBody}>
-                <h2 className={styles.modalTitle}>About Me</h2>
-                <p className={styles.modalText}>Some details about me...</p>
+                <div className={styles.aboutMeContent}>
+                  <div className={styles.aboutMeImage}>
+                    <Image
+                      src="/images/profilepict.png"
+                      alt="Profile Photo"
+                      width={200}
+                      height={200}
+                      className={styles.profileImage}
+                    />
+                  </div>
+                  <div className={styles.aboutMeText}>
+                    <h2 className={styles.aboutMeTitle}>
+                      Hello, I&apos;m Paundra Pujo Darmawan
+                    </h2>
+                    <p className={styles.aboutMeParagraph}>
+                      I&apos;m a passionate backend developer with expertise in
+                      building robust and scalable applications. With a strong
+                      foundation in multiple programming languages and
+                      frameworks, I specialize in creating some backend stuff,
+                      like an API, design and managing database,
+                      troubleshooting, writing server-side-code, and sometimes
+                      be a devops.
+                    </p>
+                    <p className={styles.aboutMeParagraph}>
+                      My journey in technology began when im in my final year in
+                      junior high school and have the final project for
+                      information technology subject. Since then, I&apos;ve
+                      worked on various projects ranging from the plain html css
+                      js, to more advance projects i follow at my college.
+                      I&apos;m particularly interested in backend development
+                      and cyber security (blue team enjoyer) and always looking
+                      for new challenges to expand my knowledge.
+                    </p>
+                    <p className={styles.aboutMeParagraph}>
+                      When I&apos;m not coding, you can find me X. I believe in
+                      continuous learning and staying updated with the latest
+                      technologies in the ever-evolving tech landscape.
+                    </p>
+                  </div>
+                </div>
                 <button
                   className={styles.closeModalButton}
                   onClick={closeModal}
@@ -344,7 +385,8 @@ export default function Home() {
                       platform.
                     </div>
                     <div className={styles.projectTech}>
-                      <span className={styles.techTag}>C</span>
+                      <span className={styles.techTag}>Javascript</span>
+                      <span className={styles.techTag}>ExpressJS</span>
                     </div>
                     <div className={styles.projectLinks}>
                       <a
@@ -420,35 +462,108 @@ export default function Home() {
                   {/* Experience 2 */}
                   <div className={styles.experienceCard}>
                     <div className={styles.experienceDot}></div>
-                    <div className={styles.experienceDate}>2020 - 2022</div>
+                    <div className={styles.experienceDate}>
+                      NOV 2024 - Present
+                    </div>
                     <div className={styles.experienceTitle}>
-                      Frontend Developer
+                      Backend Developer
                     </div>
                     <div className={styles.experienceCompany}>
-                      Digital Solutions Co.
+                      A Renewal Agent 6.0
                     </div>
                     <div className={styles.experienceDescription}>
-                      Developed and maintained multiple web applications,
-                      focusing on user experience and performance optimization.
+                      Using NestJS and Prisma to create a backend service for
+                      the annual event of my department.
                     </div>
                     <div className={styles.experienceSkills}>
-                      <span className={styles.experienceSkill}>JavaScript</span>
-                      <span className={styles.experienceSkill}>Vue.js</span>
-                      <span className={styles.experienceSkill}>CSS3</span>
-                      <span className={styles.experienceSkill}>REST APIs</span>
+                      <span className={styles.experienceSkill}>Typescript</span>
+                      <span className={styles.experienceSkill}>NestJS</span>
+                      <span className={styles.experienceSkill}>PostgreSQL</span>
                     </div>
-                    <div className={styles.experienceAchievements}>
-                      <div className={styles.experienceAchievement}>
-                        Optimized application performance, reducing load time by
-                        60%
-                      </div>
-                      <div className={styles.experienceAchievement}>
-                        Implemented responsive designs for mobile-first approach
-                      </div>
-                      <div className={styles.experienceAchievement}>
-                        Collaborated with UX team to improve user engagement
-                        metrics
-                      </div>
+                  </div>
+
+                  {/* Experience 3 */}
+                  <div className={styles.experienceCard}>
+                    <div className={styles.experienceDot}></div>
+                    <div className={styles.experienceDate}>
+                      OCT 2024 - Present
+                    </div>
+                    <div className={styles.experienceTitle}>
+                      Backend Developer
+                    </div>
+                    <div className={styles.experienceCompany}>
+                      Petroleum Integrated Days 2025
+                    </div>
+                    <div className={styles.experienceDescription}>
+                      Using Golang and Gin Gonic to create a backend service for
+                      international-scaled competition held by Society of
+                      Petroleum Engineers Institut Teknologi Sepuluh Nopember
+                      Student Chapter (SPE ITS SC)
+                    </div>
+                    <div className={styles.experienceSkills}>
+                      <span className={styles.experienceSkill}>Golang</span>
+                      <span className={styles.experienceSkill}>Gin Gonic</span>
+                      <span className={styles.experienceSkill}>PostgreSQL</span>
+                    </div>
+                  </div>
+
+                  {/* Experience 4 */}
+                  <div className={styles.experienceCard}>
+                    <div className={styles.experienceDot}></div>
+                    <div className={styles.experienceDate}>
+                      OCT 2024 - MAR 2025
+                    </div>
+                    <div className={styles.experienceTitle}>
+                      Backend Developer
+                    </div>
+                    <div className={styles.experienceCompany}>
+                      Ini Lho ITS 2025!
+                    </div>
+                    <div className={styles.experienceDescription}>
+                      INI LHO ITS 2025 is An annual event helps high school
+                      students explore academic programs aligned with their
+                      interests. Highlights include OPEN CAMPUS SEPULUH
+                      NOPEMBER, TRY OUT WELCOME SEPULUH NOPEMBER, and
+                      EXPEDITION! Each offering engaging activities to discover
+                      ITS and your future. For this project, I was responsible
+                      to creating some API&apos;s, managing the database, and
+                      some other stuff.
+                    </div>
+                    <div className={styles.experienceSkills}>
+                      <span className={styles.experienceSkill}>Golang</span>
+                      <span className={styles.experienceSkill}>Gin Gonic</span>
+                      <span className={styles.experienceSkill}>PostgreSQL</span>
+                      <span className={styles.experienceSkill}>Leadership</span>
+                      <span className={styles.experienceSkill}>Teamwork</span>
+                    </div>
+                  </div>
+
+                  {/* Experience 5 */}
+                  <div className={styles.experienceCard}>
+                    <div className={styles.experienceDot}></div>
+                    <div className={styles.experienceDate}>
+                      SEPT 2024 - DEC 2024
+                    </div>
+                    <div className={styles.experienceTitle}>
+                      Backend Developer
+                    </div>
+                    <div className={styles.experienceCompany}>
+                      MABA CUP ITS 2024
+                    </div>
+                    <div className={styles.experienceDescription}>
+                      MABA CUP ITS is a competition event held to develop the
+                      skills of ITS new students, especially in Arts,
+                      Linguistics, Music, and Sports. MABA CUP ITS is organized
+                      by Lembaga Minat Bakat Institut Teknologi Sepuluh Nopember
+                      (LMB ITS). For this project, I was responsible to create
+                      the website to inform the competition details.
+                    </div>
+                    <div className={styles.experienceSkills}>
+                      <span className={styles.experienceSkill}>Golang</span>
+                      <span className={styles.experienceSkill}>Gin Gonic</span>
+                      <span className={styles.experienceSkill}>PostgreSQL</span>
+                      <span className={styles.experienceSkill}>Leadership</span>
+                      <span className={styles.experienceSkill}>Teamwork</span>
                     </div>
                   </div>
                 </div>
@@ -492,48 +607,21 @@ export default function Home() {
                 <div className={styles.blogCards}>
                   {/* Blog Card 1 */}
                   <div className={styles.blogCard}>
-                    <div className={styles.blogDate}>March 15, 2024</div>
+                    <div className={styles.blogDate}>January 17, 2025</div>
                     <h3 className={styles.blogTitle}>
-                      Building a Retro Portfolio with Next.js
+                      Write Up Cyber Jawara National 2024
                     </h3>
                     <p className={styles.blogExcerpt}>
-                      A deep dive into creating a nostalgic 90&apos;s inspired
-                      portfolio website using modern web technologies. Learn how
-                      to combine the best of both worlds...
+                      A deep dive explanation about the Cyber Jawara National
+                      Forensic challenge.
                     </p>
                     <div className={styles.blogTags}>
-                      <span className={styles.blogTag}>Web Development</span>
-                      <span className={styles.blogTag}>Next.js</span>
-                      <span className={styles.blogTag}>Design</span>
+                      <span className={styles.blogTag}>Cyber Security</span>
+                      <span className={styles.blogTag}>Digital Forensics</span>
+                      <span className={styles.blogTag}>CTF</span>
                     </div>
                     <a
-                      href="https://www.notion.so/your-blog-post-1"
-                      className={styles.blogLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Read More
-                    </a>
-                  </div>
-
-                  {/* Blog Card 2 */}
-                  <div className={styles.blogCard}>
-                    <div className={styles.blogDate}>March 10, 2024</div>
-                    <h3 className={styles.blogTitle}>
-                      The Evolution of Web Design
-                    </h3>
-                    <p className={styles.blogExcerpt}>
-                      Exploring how web design has evolved from the early days
-                      of the internet to modern responsive design. A journey
-                      through time and technology...
-                    </p>
-                    <div className={styles.blogTags}>
-                      <span className={styles.blogTag}>Web Design</span>
-                      <span className={styles.blogTag}>History</span>
-                      <span className={styles.blogTag}>UI/UX</span>
-                    </div>
-                    <a
-                      href="https://www.notion.so/your-blog-post-2"
+                      href="https://paundrapujo.notion.site/Cyber-Jawara-2024-17e6458077f08091aa39c62a713d90fd"
                       className={styles.blogLink}
                       target="_blank"
                       rel="noopener noreferrer"
