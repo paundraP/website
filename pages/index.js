@@ -81,26 +81,27 @@ export default function Home() {
       <nav className={styles.navbar}>
         {/* Logo */}
         <div className={styles.logo}>
-          <Image src="/vercel.svg" alt="Logo" width={40} height={40} />
           <span>Paundra Pujo Darmawan</span>
         </div>
 
         {/* Social Media Icons */}
         <div className={styles.socialIcons}>
-          <a href="#">YouTube</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Instagram</a>
+          <a href="https://x.com/paundrapujo" target="_blank">
+            X
+          </a>
+          <a
+            href="https://www.linkedin.com/in/paundra-pujo-darmawan"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+          <a href="https://instagram.com/paundra.pujo" target="_blank">
+            Instagram
+          </a>
         </div>
       </nav>
 
       <div className={`${styles.page} ${pressStart2p.variable}`}>
-        {/* Animated Cloud Background */}
-        <div className={styles.clouds}>
-          {[...Array(5)].map((_, i) => (
-            <div key={i} className={styles.cloud} />
-          ))}
-        </div>
-
         <div className={styles.iconGrid}>
           <div
             className={styles.iconWindow}
@@ -252,26 +253,23 @@ export default function Home() {
                   {/* Project Card 1 */}
                   <div className={styles.projectCard}>
                     <div className={styles.projectCardHeader}>
-                      <div className={styles.projectIcon}>📱</div>
-                      <div className={styles.projectTitle}>
-                        Mobile App Development
-                      </div>
+                      <div className={styles.projectIcon}>🌐</div>
+                      <div className={styles.projectTitle}>Weather API</div>
                     </div>
                     <div className={styles.projectDescription}>
-                      A cross-platform mobile application built with React
-                      Native, featuring real-time data synchronization and
-                      offline capabilities.
+                      A Weather API use Golang to see how the weather of a city
+                      in the world
                     </div>
                     <div className={styles.projectTech}>
-                      <span className={styles.techTag}>React Native</span>
-                      <span className={styles.techTag}>Firebase</span>
-                      <span className={styles.techTag}>Redux</span>
+                      <span className={styles.techTag}>Golang</span>
+                      <span className={styles.techTag}>HTMX</span>
                     </div>
                     <div className={styles.projectLinks}>
-                      <a href="#" className={styles.projectLink}>
-                        View Demo
-                      </a>
-                      <a href="#" className={styles.projectLink}>
+                      <a
+                        href="https://github.com/paundraP/Weather-Tracker"
+                        className={styles.projectLink}
+                        target="_blank"
+                      >
                         Source Code
                       </a>
                     </div>
@@ -281,24 +279,176 @@ export default function Home() {
                   <div className={styles.projectCard}>
                     <div className={styles.projectCardHeader}>
                       <div className={styles.projectIcon}>🌐</div>
-                      <div className={styles.projectTitle}>Web Dashboard</div>
+                      <div className={styles.projectTitle}>
+                        Golang Starter Template
+                      </div>
                     </div>
                     <div className={styles.projectDescription}>
-                      An interactive web dashboard for data visualization and
-                      analytics, built with modern web technologies.
+                      This is a backend template built with Golang and the Fiber
+                      web framework. Have Integrated Payment Gateway use
+                      Midtrans and storage management use AWS S3 Bucket
                     </div>
                     <div className={styles.projectTech}>
-                      <span className={styles.techTag}>React</span>
-                      <span className={styles.techTag}>D3.js</span>
-                      <span className={styles.techTag}>Node.js</span>
+                      <span className={styles.techTag}>Golang</span>
+                      <span className={styles.techTag}>Fiber</span>
+                      <span className={styles.techTag}>HTML</span>
                     </div>
                     <div className={styles.projectLinks}>
-                      <a href="#" className={styles.projectLink}>
-                        Live Demo
+                      <a
+                        href="https://github.com/paundraP/Go-Starter-Template"
+                        className={styles.projectLink}
+                        target="_blank"
+                      >
+                        Source Code
                       </a>
-                      <a href="#" className={styles.projectLink}>
-                        GitHub
+                    </div>
+                  </div>
+
+                  {/* Project Card 3 */}
+                  <div className={styles.projectCard}>
+                    <div className={styles.projectCardHeader}>
+                      <div className={styles.projectIcon}>🌐</div>
+                      <div className={styles.projectTitle}>
+                        Spotify Look-Like
+                      </div>
+                    </div>
+                    <div className={styles.projectDescription}>
+                      This is my Final Project for my Programming Technique and
+                      Algorithms course. The requirements is to make a playlist
+                      app like spotify use C Language
+                    </div>
+                    <div className={styles.projectTech}>
+                      <span className={styles.techTag}>C</span>
+                    </div>
+                    <div className={styles.projectLinks}>
+                      <a
+                        href="https://github.com/paundraP/Final-Project-ATP-2024"
+                        className={styles.projectLink}
+                        target="_blank"
+                      >
+                        Source Code
                       </a>
+                    </div>
+                  </div>
+
+                  {/* Project Card 4 */}
+                  <div className={styles.projectCard}>
+                    <div className={styles.projectCardHeader}>
+                      <div className={styles.projectIcon}>🌐</div>
+                      <div className={styles.projectTitle}>Bookshelf API</div>
+                    </div>
+                    <div className={styles.projectDescription}>
+                      This is one of the projects that I worked on for the final
+                      project submission in the Learning to Make Back-End
+                      Applications for Beginners course on the Dicoding
+                      platform.
+                    </div>
+                    <div className={styles.projectTech}>
+                      <span className={styles.techTag}>C</span>
+                    </div>
+                    <div className={styles.projectLinks}>
+                      <a
+                        href="https://github.com/paundraP/Bookshelf-API"
+                        className={styles.projectLink}
+                        target="_blank"
+                      >
+                        Source Code
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  className={styles.closeModalButton}
+                  onClick={closeModal}
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeModal == "experiences" && (
+          <div className={styles.modal}>
+            <div className={styles.modalContent}>
+              <div className={styles.modalTitleBar}>
+                <span>Work Experience</span>
+                <div className={styles.windowControls}>
+                  <div
+                    className={`${styles.windowButton} ${styles.minimizeButton}`}
+                  >
+                    _
+                  </div>
+                  <div
+                    className={`${styles.windowButton} ${styles.maximizeButton}`}
+                  >
+                    □
+                  </div>
+                  <div
+                    className={`${styles.windowButton} ${styles.closeButton}`}
+                    onClick={closeModal}
+                  >
+                    ×
+                  </div>
+                </div>
+              </div>
+              <div className={styles.modalBody}>
+                <h2>Professional Journey</h2>
+                <div className={styles.experienceTimeline}>
+                  {/* Experience 1 */}
+                  <div className={styles.experienceCard}>
+                    <div className={styles.experienceDot}></div>
+                    <div className={styles.experienceDate}>
+                      JAN 2025 - Present
+                    </div>
+                    <div className={styles.experienceTitle}>
+                      Backend Developer
+                    </div>
+                    <div className={styles.experienceCompany}>TEDxITS 2025</div>
+                    <div className={styles.experienceDescription}>
+                      Use Golang and Gin Framework to create and manage API that
+                      can be used perfectly for the front end.
+                    </div>
+                    <div className={styles.experienceSkills}>
+                      <span className={styles.experienceSkill}>Golang</span>
+                      <span className={styles.experienceSkill}>Gin Gonic</span>
+                      <span className={styles.experienceSkill}>PostgreSQL</span>
+                      <span className={styles.experienceSkill}>Teamwork</span>
+                    </div>
+                  </div>
+
+                  {/* Experience 2 */}
+                  <div className={styles.experienceCard}>
+                    <div className={styles.experienceDot}></div>
+                    <div className={styles.experienceDate}>2020 - 2022</div>
+                    <div className={styles.experienceTitle}>
+                      Frontend Developer
+                    </div>
+                    <div className={styles.experienceCompany}>
+                      Digital Solutions Co.
+                    </div>
+                    <div className={styles.experienceDescription}>
+                      Developed and maintained multiple web applications,
+                      focusing on user experience and performance optimization.
+                    </div>
+                    <div className={styles.experienceSkills}>
+                      <span className={styles.experienceSkill}>JavaScript</span>
+                      <span className={styles.experienceSkill}>Vue.js</span>
+                      <span className={styles.experienceSkill}>CSS3</span>
+                      <span className={styles.experienceSkill}>REST APIs</span>
+                    </div>
+                    <div className={styles.experienceAchievements}>
+                      <div className={styles.experienceAchievement}>
+                        Optimized application performance, reducing load time by
+                        60%
+                      </div>
+                      <div className={styles.experienceAchievement}>
+                        Implemented responsive designs for mobile-first approach
+                      </div>
+                      <div className={styles.experienceAchievement}>
+                        Collaborated with UX team to improve user engagement
+                        metrics
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -433,7 +583,13 @@ export default function Home() {
                 <div className={styles.sectionTitle}>Programming Languages</div>
                 <div className={styles.langToolsGrid}>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>🐹</div>
+                    <Image
+                      src="/langandtool/go.svg"
+                      alt="golang"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>Golang</div>
                     <div className={styles.langToolType}>Language</div>
                     <div
@@ -441,7 +597,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>⚡</div>
+                    <Image
+                      src="/langandtool/cpp.svg"
+                      alt="C++"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>C++</div>
                     <div className={styles.langToolType}>Language</div>
                     <div
@@ -449,7 +611,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>🔧</div>
+                    <Image
+                      src="/langandtool/clang.svg"
+                      alt="C"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>C</div>
                     <div className={styles.langToolType}>Language</div>
                     <div
@@ -457,7 +625,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>📜</div>
+                    <Image
+                      src="/langandtool/javascript.svg"
+                      alt="Javascript"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>JavaScript</div>
                     <div className={styles.langToolType}>Language</div>
                     <div
@@ -465,7 +639,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>📘</div>
+                    <Image
+                      src="/langandtool/typescript.svg"
+                      alt="Typescript"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>TypeScript</div>
                     <div className={styles.langToolType}>Language</div>
                     <div
@@ -473,7 +653,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>🦀</div>
+                    <Image
+                      src="/langandtool/rust.svg"
+                      alt="Rust"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>Rust</div>
                     <div className={styles.langToolType}>Language</div>
                     <div
@@ -481,7 +667,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>🍎</div>
+                    <Image
+                      src="/langandtool/swift.svg"
+                      alt="Swift"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>Swift</div>
                     <div className={styles.langToolType}>Language</div>
                     <div
@@ -489,7 +681,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>🐍</div>
+                    <Image
+                      src="/langandtool/python.svg"
+                      alt="Python"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>Python</div>
                     <div className={styles.langToolType}>Language</div>
                     <div
@@ -501,7 +699,13 @@ export default function Home() {
                 <div className={styles.sectionTitle}>Frameworks</div>
                 <div className={styles.langToolsGrid}>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>🌿</div>
+                    <Image
+                      src="/langandtool/gin.png"
+                      alt="Gin Gonic Framework"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>Gin</div>
                     <div className={styles.langToolType}>Framework</div>
                     <div
@@ -509,7 +713,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>🧵</div>
+                    <Image
+                      src="/langandtool/fiber.svg"
+                      alt="GoFiber Framework"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>Fiber</div>
                     <div className={styles.langToolType}>Framework</div>
                     <div
@@ -517,7 +727,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>⏭️</div>
+                    <Image
+                      src="/langandtool/nextjs.png"
+                      alt="NextJS"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>Next.js</div>
                     <div className={styles.langToolType}>Framework</div>
                     <div
@@ -525,7 +741,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>🪺</div>
+                    <Image
+                      src="/langandtool/nestjs.svg"
+                      alt="NestJS"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>Nest.js</div>
                     <div className={styles.langToolType}>Framework</div>
                     <div
@@ -533,7 +755,13 @@ export default function Home() {
                     ></div>
                   </div>
                   <div className={styles.langToolCard}>
-                    <div className={styles.langToolIcon}>🚂</div>
+                    <Image
+                      src="/langandtool/expressjs.png"
+                      alt="ExpressJS"
+                      width={48}
+                      height={48}
+                      className={styles.langToolIcon}
+                    />
                     <div className={styles.langToolName}>Express.js</div>
                     <div className={styles.langToolType}>Framework</div>
                     <div
@@ -664,114 +892,6 @@ export default function Home() {
           </div>
         )}
       </div>
-
-      {activeModal == "experiences" && (
-        <div className={styles.modal}>
-          <div className={styles.modalContent}>
-            <div className={styles.modalTitleBar}>
-              <span>Work Experience</span>
-              <div className={styles.windowControls}>
-                <div
-                  className={`${styles.windowButton} ${styles.minimizeButton}`}
-                >
-                  _
-                </div>
-                <div
-                  className={`${styles.windowButton} ${styles.maximizeButton}`}
-                >
-                  □
-                </div>
-                <div
-                  className={`${styles.windowButton} ${styles.closeButton}`}
-                  onClick={closeModal}
-                >
-                  ×
-                </div>
-              </div>
-            </div>
-            <div className={styles.modalBody}>
-              <h2>Professional Journey</h2>
-              <div className={styles.experienceTimeline}>
-                {/* Experience 1 */}
-                <div className={styles.experienceCard}>
-                  <div className={styles.experienceDot}></div>
-                  <div className={styles.experienceDate}>2022 - Present</div>
-                  <div className={styles.experienceTitle}>
-                    Senior Frontend Developer
-                  </div>
-                  <div className={styles.experienceCompany}>
-                    Tech Innovations Inc.
-                  </div>
-                  <div className={styles.experienceDescription}>
-                    Leading the frontend development team in creating modern web
-                    applications using React and Next.js.
-                  </div>
-                  <div className={styles.experienceSkills}>
-                    <span className={styles.experienceSkill}>React</span>
-                    <span className={styles.experienceSkill}>Next.js</span>
-                    <span className={styles.experienceSkill}>TypeScript</span>
-                    <span className={styles.experienceSkill}>
-                      Team Leadership
-                    </span>
-                  </div>
-                  <div className={styles.experienceAchievements}>
-                    <div className={styles.experienceAchievement}>
-                      Led the migration of legacy systems to modern React
-                      architecture
-                    </div>
-                    <div className={styles.experienceAchievement}>
-                      Implemented CI/CD pipelines reducing deployment time by
-                      40%
-                    </div>
-                    <div className={styles.experienceAchievement}>
-                      Mentored junior developers and conducted weekly tech
-                      workshops
-                    </div>
-                  </div>
-                </div>
-
-                {/* Experience 2 */}
-                <div className={styles.experienceCard}>
-                  <div className={styles.experienceDot}></div>
-                  <div className={styles.experienceDate}>2020 - 2022</div>
-                  <div className={styles.experienceTitle}>
-                    Frontend Developer
-                  </div>
-                  <div className={styles.experienceCompany}>
-                    Digital Solutions Co.
-                  </div>
-                  <div className={styles.experienceDescription}>
-                    Developed and maintained multiple web applications, focusing
-                    on user experience and performance optimization.
-                  </div>
-                  <div className={styles.experienceSkills}>
-                    <span className={styles.experienceSkill}>JavaScript</span>
-                    <span className={styles.experienceSkill}>Vue.js</span>
-                    <span className={styles.experienceSkill}>CSS3</span>
-                    <span className={styles.experienceSkill}>REST APIs</span>
-                  </div>
-                  <div className={styles.experienceAchievements}>
-                    <div className={styles.experienceAchievement}>
-                      Optimized application performance, reducing load time by
-                      60%
-                    </div>
-                    <div className={styles.experienceAchievement}>
-                      Implemented responsive designs for mobile-first approach
-                    </div>
-                    <div className={styles.experienceAchievement}>
-                      Collaborated with UX team to improve user engagement
-                      metrics
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button className={styles.closeModalButton} onClick={closeModal}>
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </>
   );
 }

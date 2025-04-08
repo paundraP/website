@@ -133,87 +133,52 @@
   height: 100%;
   overflow: hidden;
   z-index: 0;
+  pointer-events: none;
 }
 
 .cloud {
   position: absolute;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  animation: moveCloud linear infinite;
-  left: -200px; /* Start from outside the viewport */
+  width: 200px;
+  height: 200px;
+  background: url("/images/cloud.png") no-repeat center center;
+  background-size: contain;
+  opacity: 0.8;
 }
 
-.cloud:before,
-.cloud:after {
-  content: "";
-  position: absolute;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-}
-
-.cloud:before {
-  width: 100px;
-  height: 100px;
-  top: -50px;
-  left: 25px;
-}
-
-.cloud:after {
-  width: 60px;
-  height: 60px;
-  top: -30px;
-  right: 25px;
-}
-
-@keyframes moveCloud {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(
-      calc(100vw + 400px)
-    ); /* Move across the entire viewport width */
-  }
-}
-
-/* Add more cloud variations */
+/* Cloud positions */
 .cloud:nth-child(1) {
   top: 20%;
+  left: 10%;
   width: 200px;
-  height: 60px;
-  animation-duration: 30s;
+  height: 200px;
 }
 
 .cloud:nth-child(2) {
   top: 40%;
+  left: 30%;
   width: 300px;
-  height: 100px;
-  animation-duration: 40s;
-  animation-delay: -10s;
+  height: 300px;
 }
 
 .cloud:nth-child(3) {
   top: 60%;
+  left: 50%;
   width: 250px;
-  height: 80px;
-  animation-duration: 35s;
-  animation-delay: -5s;
+  height: 250px;
 }
 
 .cloud:nth-child(4) {
   top: 80%;
+  left: 70%;
   width: 180px;
-  height: 50px;
-  animation-duration: 25s;
-  animation-delay: -15s;
+  height: 180px;
 }
 
 .cloud:nth-child(5) {
   top: 30%;
+  left: 90%;
   width: 220px;
-  height: 70px;
-  animation-duration: 45s;
-  animation-delay: -20s;
+  height: 220px;
 }
 
 .iconGrid {
@@ -221,7 +186,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 50px auto;
   position: relative;
   z-index: 1;
 }
@@ -445,26 +410,22 @@ a.secondary {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .navbar .navLinks {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .navbar .socialIcons {
-    margin-top: 10px;
+  .page {
+    padding: 10px;
+    overflow: auto;
+    height: auto;
+    min-height: 100vh;
   }
 
   .iconGrid {
     grid-template-columns: 1fr;
-    padding: 0 20px;
+    gap: 15px;
+    margin: 20px auto;
+    padding: 0 10px;
   }
 
   .iconWindow {
+    padding: 15px;
     min-height: 120px;
   }
 
@@ -473,10 +434,20 @@ a.secondary {
     height: 60px;
   }
 
+  .iconLabel {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
   .modalContent {
     width: 95%;
-    max-height: 85vh;
+    max-width: none;
+    max-height: 90vh;
     margin: 10px;
+  }
+
+  .modalTitleBar {
+    padding: 8px 12px;
   }
 
   .windowControls {
@@ -484,33 +455,127 @@ a.secondary {
   }
 
   .windowButton {
-    width: 22px;
-    height: 22px;
-    font-size: 12px;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
   }
 
-  /* Adjust card layouts for mobile */
-  .projectCards,
-  .blogCards,
-  .langToolsGrid {
+  .modalBody {
+    padding: 15px;
+    max-height: calc(90vh - 50px);
+  }
+
+  .closeModalButton {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  /* Project Cards Mobile */
+  .projectCards {
     grid-template-columns: 1fr;
     gap: 15px;
   }
 
-  /* Adjust form elements for mobile */
+  .projectCard {
+    padding: 12px;
+  }
+
+  .projectTitle {
+    font-size: 16px;
+  }
+
+  .projectDescription {
+    font-size: 14px;
+  }
+
+  .projectLink {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* Blog Cards Mobile */
+  .blogCards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .blogCard {
+    padding: 15px;
+  }
+
+  .blogTitle {
+    font-size: 18px;
+  }
+
+  .blogExcerpt {
+    font-size: 14px;
+  }
+
+  /* Languages & Tools Mobile */
+  .langToolsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .langToolCard {
+    padding: 12px;
+  }
+
+  .langToolIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .langToolName {
+    font-size: 14px;
+  }
+
+  /* Contact Form Mobile */
+  .contactForm {
+    padding: 15px;
+  }
+
   .formGroup {
     margin-bottom: 12px;
   }
 
   .formInput,
   .formTextarea {
-    padding: 8px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 16px;
   }
 
   .submitButton {
-    padding: 8px 16px;
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  /* Experience Timeline Mobile */
+  .experienceTimeline {
+    padding: 15px;
+  }
+
+  .experienceCard {
+    padding: 12px;
+    margin-bottom: 20px;
+  }
+
+  .experienceTitle {
+    font-size: 16px;
+  }
+
+  .experienceDescription {
     font-size: 14px;
+  }
+
+  .experienceSkills {
+    gap: 8px;
+  }
+
+  .experienceSkill {
+    padding: 6px 12px;
+    font-size: 12px;
   }
 }
 
@@ -562,7 +627,7 @@ a.secondary {
 
 .projectCards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   padding: 10px;
 }
@@ -862,6 +927,8 @@ a.secondary {
   border: 1px solid #808080;
   border-top-color: #fff;
   border-left-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .experienceAchievements {
@@ -908,8 +975,6 @@ a.secondary {
 }
 
 .langToolIcon {
-  width: 48px;
-  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -978,12 +1043,17 @@ a.secondary {
 
 @media (max-width: 480px) {
   .iconGrid {
-    max-width: 320px;
-    padding: 10px;
+    gap: 12px;
   }
 
   .iconWindow {
-    width: 120px;
+    min-height: 100px;
+    padding: 12px;
+  }
+
+  .iconImage {
+    width: 50px;
+    height: 50px;
   }
 
   .modalContent {
@@ -998,33 +1068,19 @@ a.secondary {
     border-radius: 0;
   }
 
-  .modalBody {
-    padding: 12px;
+  .windowButton {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
   }
 
-  /* Adjust text sizes for better readability */
-  .modalTitle {
-    font-size: 16px;
-  }
-
-  .modalText {
-    font-size: 13px;
-  }
-
-  .langToolsGrid,
-  .projectCards,
-  .blogCards {
+  .langToolsGrid {
     grid-template-columns: 1fr;
   }
 
-  .windowControls {
-    gap: 4px;
-  }
-
-  .windowButton {
-    width: 20px;
-    height: 20px;
-    font-size: 12px;
+  .formInput,
+  .formTextarea {
+    font-size: 14px;
   }
 }
 
