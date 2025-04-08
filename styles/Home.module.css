@@ -17,6 +17,11 @@
   position: fixed;
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -119,50 +124,106 @@
   color: #ff0080; /* Neon pink on hover */
 }
 
+/* Animated Cloud Background */
+.clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: moveCloud linear infinite;
+}
+
+.cloud:before,
+.cloud:after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.cloud:before {
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: 25px;
+}
+
+.cloud:after {
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  right: 25px;
+}
+
+@keyframes moveCloud {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 .iconGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  padding: 20px;
-  max-width: 400px;
-  margin: 0;
-  flex: 1;
-  align-content: start;
-  justify-content: start;
-  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .iconWindow {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #000;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to bottom, #c0c0c0, #d4d0c8);
-  border: 2px solid #000;
-  box-shadow: 2px 2px 0 #000;
-  padding: 15px;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-  width: 150px;
+  text-align: center;
+  min-height: 150px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 .iconWindow:hover {
-  transform: translateY(-2px);
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
 }
 
 .iconImage {
-  width: 100%;
-  height: auto;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
   object-fit: contain;
+}
+
+.iconLabel {
+  font-size: 14px;
+  color: #000;
+  margin-top: 8px;
 }
 
 .modal {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,30 +232,30 @@
 }
 
 .modalContent {
-  background: linear-gradient(to bottom, #c0c0c0, #d4d0c8);
-  color: #000;
-  width: 90%;
+  background: #ffffff;
+  padding: 0;
+  border-radius: 8px;
+  width: 95%;
   max-width: 800px;
-  max-height: 80vh;
-  text-align: left;
-  border: 2px solid #000;
-  box-shadow: 2px 2px 0 #000;
-  font-family: "MS Sans Serif", Arial, sans-serif;
+  max-height: 90vh;
+  position: relative;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .modalTitleBar {
-  background: linear-gradient(to right, #000080, #1084d0);
+  background: #000080;
   color: white;
-  padding: 4px 8px;
+  padding: 8px 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
-  cursor: move;
-  flex-shrink: 0;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .modalTitleBar .windowControls {
@@ -203,14 +264,10 @@
 }
 
 .modalTitleBar .windowButton {
-  width: 16px;
-  height: 16px;
-  border: 1px solid #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 10px;
-  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .modalTitleBar .closeButton {
@@ -227,25 +284,21 @@
 
 .modalBody {
   padding: 20px;
-  border: 2px solid #808080;
-  border-top-color: #fff;
-  border-left-color: #fff;
-  margin: 2px;
   overflow-y: auto;
   flex: 1;
-  max-height: calc(80vh - 100px);
+  -webkit-overflow-scrolling: touch;
 }
 
-.modalContent h2 {
-  font-size: 16px;
-  margin-bottom: 10px;
+.modalTitle {
+  font-size: 18px;
+  margin-bottom: 15px;
   color: #000080;
 }
 
-.modalContent p {
+.modalText {
   font-size: 14px;
-  margin-bottom: 20px;
-  line-height: 1.4;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 .closeModalButton {
@@ -355,17 +408,67 @@ a.secondary {
   }
 
   .iconGrid {
-    max-width: 360px;
-    padding: 15px;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
   }
 
   .iconWindow {
-    width: 130px;
+    min-height: 120px;
+  }
+
+  .iconImage {
+    width: 60px;
+    height: 60px;
   }
 
   .modalContent {
     width: 95%;
-    max-height: 90vh;
+    max-height: 85vh;
+    margin: 10px;
+  }
+
+  .modalTitleBar {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .modalBody {
+    padding: 15px;
+  }
+
+  .windowControls {
+    gap: 4px;
+  }
+
+  .windowButton {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  /* Adjust card layouts for mobile */
+  .projectCards,
+  .blogCards,
+  .langToolsGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* Adjust form elements for mobile */
+  .formGroup {
+    margin-bottom: 12px;
+  }
+
+  .formInput,
+  .formTextarea {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .submitButton {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }
 
@@ -843,9 +946,27 @@ a.secondary {
 
   .modalContent {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     max-height: 100vh;
     margin: 0;
+    border-radius: 0;
+  }
+
+  .modalTitleBar {
+    border-radius: 0;
+  }
+
+  .modalBody {
+    padding: 12px;
+  }
+
+  /* Adjust text sizes for better readability */
+  .modalTitle {
+    font-size: 16px;
+  }
+
+  .modalText {
+    font-size: 13px;
   }
 
   .langToolsGrid,

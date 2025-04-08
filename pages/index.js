@@ -94,6 +94,23 @@ export default function Home() {
       </nav>
 
       <div className={`${styles.page} ${pressStart2p.variable}`}>
+        {/* Animated Cloud Background */}
+        <div className={styles.clouds}>
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className={styles.cloud}
+              style={{
+                width: `${Math.random() * 100 + 100}px`,
+                height: `${Math.random() * 60 + 40}px`,
+                top: `${Math.random() * 100}%`,
+                animationDuration: `${Math.random() * 20 + 30}s`,
+                animationDelay: `${Math.random() * 10}s`,
+              }}
+            />
+          ))}
+        </div>
+
         <div className={styles.iconGrid}>
           <div
             className={styles.iconWindow}
@@ -101,68 +118,79 @@ export default function Home() {
           >
             <Image
               src="/images/about-me.png"
-              alt="About Me Icon"
-              width={200}
-              height={200}
+              alt="About Me"
+              width={80}
+              height={80}
               className={styles.iconImage}
             />
+            <span className={styles.iconLabel}>About Me</span>
           </div>
+
           <div
             className={styles.iconWindow}
             onClick={() => openModal("projects")}
           >
             <Image
               src="/images/projects.png"
-              alt="About Me Icon"
-              width={200}
-              height={200}
+              alt="Projects"
+              width={80}
+              height={80}
               className={styles.iconImage}
             />
+            <span className={styles.iconLabel}>Projects</span>
           </div>
+
           <div
             className={styles.iconWindow}
             onClick={() => openModal("experiences")}
           >
             <Image
               src="/images/experiences.png"
-              alt="About Me Icon"
-              width={200}
-              height={200}
+              alt="Experiences"
+              width={80}
+              height={80}
               className={styles.iconImage}
             />
+            <span className={styles.iconLabel}>Experiences</span>
           </div>
+
           <div className={styles.iconWindow} onClick={() => openModal("blogs")}>
             <Image
               src="/images/blogs.png"
-              alt="About Me Icon"
-              width={200}
-              height={200}
+              alt="Blogs"
+              width={80}
+              height={80}
               className={styles.iconImage}
             />
+            <span className={styles.iconLabel}>Blogs</span>
           </div>
+
           <div
             className={styles.iconWindow}
             onClick={() => openModal("langandtools")}
           >
             <Image
               src="/images/langandtools.png"
-              alt="About Me Icon"
-              width={200}
-              height={200}
+              alt="Languages & Tools"
+              width={80}
+              height={80}
               className={styles.iconImage}
             />
+            <span className={styles.iconLabel}>Languages & Tools</span>
           </div>
+
           <div
             className={styles.iconWindow}
             onClick={() => openModal("contactme")}
           >
             <Image
               src="/images/contactme.png"
-              alt="About Me Icon"
-              width={200}
-              height={200}
+              alt="Contact Me"
+              width={80}
+              height={80}
               className={styles.iconImage}
             />
+            <span className={styles.iconLabel}>Contact Me</span>
           </div>
         </div>
 
@@ -191,8 +219,8 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.modalBody}>
-                <h2>About Me</h2>
-                <p>Some details about me...</p>
+                <h2 className={styles.modalTitle}>About Me</h2>
+                <p className={styles.modalText}>Some details about me...</p>
                 <button
                   className={styles.closeModalButton}
                   onClick={closeModal}
@@ -229,7 +257,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.modalBody}>
-                <h2>My Projects</h2>
+                <h2 className={styles.modalTitle}>My Projects</h2>
                 <div className={styles.projectCards}>
                   {/* Project Card 1 */}
                   <div className={styles.projectCard}>
@@ -320,7 +348,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.modalBody}>
-                <h2>Latest Articles</h2>
+                <h2 className={styles.modalTitle}>Latest Articles</h2>
                 <div className={styles.blogCards}>
                   {/* Blog Card 1 */}
                   <div className={styles.blogCard}>
@@ -410,7 +438,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.modalBody}>
-                <h2>Technical Skills</h2>
+                <h2 className={styles.modalTitle}>Technical Skills</h2>
 
                 <div className={styles.sectionTitle}>Programming Languages</div>
                 <div className={styles.langToolsGrid}>
@@ -564,6 +592,7 @@ export default function Home() {
                 </div>
               </div>
               <div className={styles.modalBody}>
+                <h2 className={styles.modalTitle}>Get in Touch</h2>
                 <form className={styles.contactForm} onSubmit={handleSubmit}>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel}>To:</label>
