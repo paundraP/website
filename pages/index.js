@@ -4,6 +4,7 @@ import { Press_Start_2P, Russo_One } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
+import { Analytics } from "@vercel/analytics/react"
 
 const pressStart2p = Press_Start_2P({
   variable: "--font-press-start",
