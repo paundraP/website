@@ -97,17 +97,7 @@ export default function Home() {
         {/* Animated Cloud Background */}
         <div className={styles.clouds}>
           {[...Array(5)].map((_, i) => (
-            <div
-              key={i}
-              className={styles.cloud}
-              style={{
-                width: `${Math.random() * 100 + 100}px`,
-                height: `${Math.random() * 60 + 40}px`,
-                top: `${Math.random() * 100}%`,
-                animationDuration: `${Math.random() * 20 + 30}s`,
-                animationDelay: `${Math.random() * 10}s`,
-              }}
-            />
+            <div key={i} className={styles.cloud} />
           ))}
         </div>
 
