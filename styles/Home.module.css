@@ -466,7 +466,6 @@ a.secondary {
 
   .modalBody {
     padding: 15px;
-    max-height: calc(90vh - 50px);
   }
 
   .closeModalButton {
