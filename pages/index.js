@@ -78,7 +78,7 @@ export default function Home() {
           content="Paundra Pujo Darmawan personal website"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/retro-32.png" />
       </Head>
 
       {/* Navbar */}
